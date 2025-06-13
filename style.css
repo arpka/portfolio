@@ -1,0 +1,618 @@
+body {
+  margin: 0;
+  font-family: 'Yu Gothic', sans-serif;
+}
+
+/* ヘッダー全体 */
+.site-header {
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+  padding: 60px 80px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* ヘッダーの中身を左右に分ける */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ロゴ */
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* ナビゲーション */
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  color: #007bff;
+}
+
+/* メインビジュアルのパララックス背景 */
+.main-visual {
+  margin-top: 10px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  background-image: url("images/wave.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* パララックス効果 */
+}
+
+/* About セクション */
+.about {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #000;
+  white-space: pre-line;
+}
+
+/* Works セクション */
+.works {
+  padding: 20px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.works-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.works h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* 画像の基本スタイル */
+.works img {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transform: translateY(0); /* 初期位置 */
+}
+
+/* 浮上アニメーション */
+.works img.loaded {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* フッター */
+footer {
+  background-color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  color: #666;
+  font-size: 14px;
+  border-top: 1px solid #ccc;
+}
+
+/* フェードイン用 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in.delay1 {
+  transition-delay: 0.2s;
+}
+
+.fade-in.delay2 {
+  transition-delay: 0.4s;
+}
+
+/* Aboutページのスタイル */
+.about-page {
+  padding: 60px 40px;
+  background-color: #fff;
+}
+
+.about-heading {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: left;
+  position: relative;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.about-heading::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #00cfff;
+  margin-top: 10px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.about-left img {
+  width: 320px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-right .about-name {
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.about-description {
+  max-width: 800px;
+  margin: 40px auto 0;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  text-align: left;
+}
+
+.about-description p {
+  margin-bottom: 28px;
+}
+
+.about-description em {
+  font-style: italic;
+}
+
+/* Skillセクション */
+.skill-section {
+  padding: 10px 40px;
+  background-color: #fff;
+}
+
+.skill-heading {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: left;
+  position: relative;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.skill-heading::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #00cfff;
+  margin-top: 10px;
+}
+
+.skill-list {
+  font-size: 30px;
+  line-height: 2;
+  margin: 0 auto;
+  padding-left: 20px;
+  text-align: left;
+  list-style-position: inside;
+  max-width: 300px;
+}
+
+/* Contactセクション */
+.contact-section {
+  padding: 40px 40px;
+  background-color: #fff;
+}
+
+.contact-heading {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.contact-heading::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #00cfff;
+  margin-top: 10px;
+}
+
+.contact-text {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.contact-form button {
+  background-color: #00cfff;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  display: block;
+  margin: 20px auto 0;
+}
+
+.contact-form button:hover {
+  background-color: #00b5e2;
+}
+
+.works-page {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.works-intro p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.work-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-bottom: 80px;
+}
+
+.work-image {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 8px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.work-info {
+  text-align: left; 
+  width: 100%;
+  max-width: 600px;
+}
+
+
+.work-info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.work-info p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.section-title {
+  font-size: 28px;
+  text-align: left;
+  border-left: 5px solid #00aaff;
+  padding-left: 10px;
+  margin-bottom: 40px;
+}
+
+.work-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+
+
+.work-images .work-image {
+  width: 45%;
+  max-width: 300px;
+  height: auto;
+}
+
+.meishi-images .work-image {
+  width: 80%;
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .work-images .work-image {
+    width: 100%;
+    max-width: 100%;
+  }
+  .meishi-images .work-image {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- スマホ・小画面（〜480px） --- */
+@media (max-width: 480px) {
+
+  .site-header {
+    padding: 30px 20px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .site-nav a {
+    font-size: 16px;
+  }
+
+  .main-visual {
+    height: 50vh; /* スマホでは高さを少し縮める */
+  }
+
+  .parallax-bg {
+    background-attachment: scroll; /* パララックスはスマホ非対応が多いので通常スクロールに */
+  }
+
+  .about .content {
+    padding: 0 10px;
+  }
+
+  .about h2 {
+    font-size: 28px;
+  }
+
+  .about p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .works-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .works img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Aboutページのabout-contentは縦並び */
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .about-left img {
+    width: 80%;
+    max-width: 280px;
+  }
+
+  .about-right .about-name {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .about-description {
+    max-width: 100%;
+    margin: 20px 10px 0;
+    font-size: 16px;
+  }
+
+  /* Skill セクション */
+  .skill-section {
+    padding: 20px 10px;
+  }
+
+  .skill-heading {
+    font-size: 28px;
+  }
+
+  .skill-list {
+    font-size: 20px;
+    max-width: 100%;
+    padding-left: 10px;
+  }
+
+  /* Contactセクション */
+  .contact-section {
+    padding: 20px 10px;
+  }
+
+  .contact-heading {
+    font-size: 28px;
+  }
+
+  .contact-text {
+    font-size: 16px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .contact-form button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .work-images .work-image,
+  .meishi-images .work-image {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* --- タブレット（481px〜768px） --- */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .site-header {
+    padding: 40px 40px;
+  }
+
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .site-nav ul {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .site-nav a {
+    font-size: 18px;
+  }
+
+  .main-visual {
+    height: 70vh;
+  }
+
+  .parallax-bg {
+    background-attachment: scroll;
+  }
+
+  .about h2,
+  .skill-heading,
+  .contact-heading,
+  .about-heading {
+    font-size: 32px;
+  }
+
+  .about p,
+  .about-description,
+  .contact-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .about-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .about-left img {
+    width: 280px;
+  }
+
+  .about-right .about-name {
+    font-size: 42px;
+  }
+
+  .skill-list {
+    font-size: 24px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px;
+  }
+
+  .contact-form button {
+    font-size: 18px;
+  }
+}

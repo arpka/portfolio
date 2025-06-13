@@ -2,9 +2,80 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>ポートフォリオ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aika Fukuhara Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>こんにちは！これはテストです</h1>
+
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Aika Fukuhara</h1>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li> 
+          <li><a href="#works">WORKS</a></li>  
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+      
+    </div>
+  </header>
+
+  <section class="main-visual">
+    <div class="parallax-bg"></div>
+  </section>
+  
+  <section class="about fade-in">
+    <div class="content">
+      <h2>About me</h2>
+      <p>
+        人との繋がりを大切にし、これまでの経験を活かしながら、
+        お客様一人ひとりの視点に立ち、丁寧にヒアリングを行い
+        寄り添うことを大切にしています。
+        その思いをデザインに反映させ、心に響くデザインを
+        お届けできるデザイナーを目指しています。
+      </p>
+    </div>
+  </section>
+  
+  <section class="works fade-in">
+    <div class="works-content">
+      <h2 class="fade-in">WORKS</h2>
+      <img src="images/apple.png" alt="アップルパイの店LP" class="fade-in delay1" />
+      <img src="images/blog.png" alt="出産・子育てブログ" class="fade-in delay2" />
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 aikaarrow portfolio All rights reserved.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.01 });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    window.addEventListener('load', () => {
+      const images = document.querySelectorAll('.works img');
+      images.forEach(img => {
+        img.classList.add('loaded');
+        img.addEventListener('transitionend', () => {
+          img.classList.remove('loaded');
+        }, { once: true });
+      });
+    });
+  </script>
+
 </body>
 </html>
