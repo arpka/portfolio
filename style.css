@@ -539,8 +539,7 @@ html {
 }
 
 
-/* --- タブレット（481px〜768px） --- */
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 480px) {
 
   .site-header {
     padding: 40px 40px;
@@ -626,7 +625,7 @@ html {
 }
 
 .logo {
-  font-size: 40px;
+  font-size: 20px;
 }
 
 
@@ -641,17 +640,18 @@ html {
   gap: 30px;
 }
 
-/* ----------------------------- */
-@media (max-width: 768px) {
+
+@media (max-width: 480px) {
   .hamburger {
     display: block;
-    font-size: 38px;
+    font-size: 34px;
     cursor: pointer;
     position: absolute;
     top: 0px;
     right: 20px;
     z-index: 10;
   }
+
 
   .site-nav {
     display: none;
