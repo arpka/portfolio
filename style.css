@@ -1,9 +1,14 @@
+/* ベース設定 */
 body {
   margin: 0;
   font-family: 'Yu Gothic', sans-serif;
 }
 
-/* ヘッダー全体 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ヘッダー */
 .site-header {
   position: relative;
   z-index: 10;
@@ -12,14 +17,13 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
-/* ヘッダーの中身を左右に分ける */
-.container {
+.site-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
-/* ロゴ */
 .logo {
   font-size: 40px;
   font-weight: bold;
@@ -46,7 +50,7 @@ body {
   color: #007bff;
 }
 
-/* メインビジュアルのパララックス背景 */
+/* メインビジュアル */
 .main-visual {
   margin-top: 10px;
   height: 100vh;
@@ -58,10 +62,10 @@ body {
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* パララックス効果 */
+  background-attachment: fixed;
 }
 
-/* About セクション */
+/* About */
 .about {
   background-color: #fff;
   padding: 60px 20px;
@@ -90,7 +94,7 @@ body {
   white-space: pre-line;
 }
 
-/* Works セクション */
+/* Works */
 .works {
   padding: 20px 20px;
   background-color: #fff;
@@ -108,7 +112,6 @@ body {
   margin-bottom: 30px;
 }
 
-/* 画像の基本スタイル */
 .works img {
   width: 80%;
   max-width: 600px;
@@ -118,16 +121,15 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 40px;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
-  transform: translateY(0); /* 初期位置 */
+  transform: translateY(0);
 }
 
-/* 浮上アニメーション */
 .works img.loaded {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* フッター */
+/* Footer */
 footer {
   background-color: #fff;
   text-align: center;
@@ -137,7 +139,7 @@ footer {
   border-top: 1px solid #ccc;
 }
 
-/* フェードイン用 */
+/* フェードイン */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -157,13 +159,15 @@ footer {
   transition-delay: 0.4s;
 }
 
-/* Aboutページのスタイル */
+/* Aboutページ */
 .about-page {
   padding: 60px 40px;
   background-color: #fff;
 }
 
-.about-heading {
+.about-heading,
+.skill-heading,
+.contact-heading {
   font-size: 40px;
   font-weight: bold;
   text-align: left;
@@ -172,7 +176,9 @@ footer {
   display: inline-block;
 }
 
-.about-heading::after {
+.about-heading::after,
+.skill-heading::after,
+.contact-heading::after {
   content: "";
   display: block;
   width: 100px;
@@ -220,28 +226,10 @@ footer {
   font-style: italic;
 }
 
-/* Skillセクション */
+/* Skill */
 .skill-section {
   padding: 10px 40px;
   background-color: #fff;
-}
-
-.skill-heading {
-  font-size: 40px;
-  font-weight: bold;
-  text-align: left;
-  position: relative;
-  margin-bottom: 40px;
-  display: inline-block;
-}
-
-.skill-heading::after {
-  content: "";
-  display: block;
-  width: 100px;
-  height: 4px;
-  background-color: #00cfff;
-  margin-top: 10px;
 }
 
 .skill-list {
@@ -254,28 +242,10 @@ footer {
   max-width: 300px;
 }
 
-/* Contactセクション */
+/* Contact */
 .contact-section {
   padding: 40px 40px;
   background-color: #fff;
-}
-
-.contact-heading {
-  font-size: 40px;
-  font-weight: bold;
-  text-align: left;
-  margin-bottom: 20px;
-  position: relative;
-  display: inline-block;
-}
-
-.contact-heading::after {
-  content: "";
-  display: block;
-  width: 100px;
-  height: 4px;
-  background-color: #00cfff;
-  margin-top: 10px;
 }
 
 .contact-text {
@@ -314,7 +284,6 @@ footer {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-
   display: block;
   margin: 20px auto 0;
 }
@@ -323,6 +292,7 @@ footer {
   background-color: #00b5e2;
 }
 
+/* Works詳細ページ */
 .works-page {
   padding: 60px 20px;
   background-color: #fff;
@@ -338,7 +308,7 @@ footer {
 .work-item {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   margin-bottom: 80px;
 }
 
@@ -352,11 +322,10 @@ footer {
 }
 
 .work-info {
-  text-align: left; 
+  text-align: left;
   width: 100%;
   max-width: 600px;
 }
-
 
 .work-info h3 {
   font-size: 20px;
@@ -384,8 +353,6 @@ footer {
   margin-bottom: 20px;
 }
 
-
-
 .work-images .work-image {
   width: 45%;
   max-width: 300px;
@@ -397,140 +364,13 @@ footer {
   max-width: 400px;
 }
 
+/* ハンバーガーメニュー */
+.hamburger,
+.nav-toggle {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .work-images .work-image {
-    width: 100%;
-    max-width: 100%;
-  }
-  .meishi-images .work-image {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* --- スマホ・小画面（〜480px） --- */
-@media (max-width: 480px) {
-
-  .site-header {
-    padding: 30px 20px;
-  }
-
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .logo {
-    font-size: 28px;
-  }
-
-  .site-nav ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .site-nav a {
-    font-size: 16px;
-  }
-
-  .main-visual {
-    height: 50vh; /* スマホでは高さを少し縮める */
-  }
-
-  .parallax-bg {
-    background-attachment: scroll; /* パララックスはスマホ非対応が多いので通常スクロールに */
-  }
-
-  .about .content {
-    padding: 0 10px;
-  }
-
-  .about h2 {
-    font-size: 28px;
-  }
-
-  .about p {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  .works-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .works img {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* Aboutページのabout-contentは縦並び */
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .about-left img {
-    width: 80%;
-    max-width: 280px;
-  }
-
-  .about-right .about-name {
-    font-size: 36px;
-    text-align: center;
-  }
-
-  .about-description {
-    max-width: 100%;
-    margin: 20px 10px 0;
-    font-size: 16px;
-  }
-
-  /* Skill セクション */
-  .skill-section {
-    padding: 20px 10px;
-  }
-
-  .skill-heading {
-    font-size: 28px;
-  }
-
-  .skill-list {
-    font-size: 20px;
-    max-width: 100%;
-    padding-left: 10px;
-  }
-
-  /* Contactセクション */
-  .contact-section {
-    padding: 20px 10px;
-  }
-
-  .contact-heading {
-    font-size: 28px;
-  }
-
-  .contact-text {
-    font-size: 16px;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .contact-form button {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
-
   .work-images .work-image,
   .meishi-images .work-image {
     width: 100%;
@@ -538,7 +378,7 @@ html {
   }
 }
 
-
+/* スマホ対応 */
 @media (max-width: 480px) {
 
   .site-header {
@@ -547,22 +387,27 @@ html {
 
   .container {
     flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .logo {
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 24px;
+    margin-bottom: 0px;
   }
 
   .site-nav ul {
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+    align-items: flex-start;
   }
 
   .site-nav a {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .main-visual {
@@ -588,74 +433,70 @@ html {
   }
 
   .about-content {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
   .about-left img {
-    width: 280px;
+    width: 80%;
+    max-width: 280px;
   }
 
   .about-right .about-name {
-    font-size: 42px;
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .about-description {
+    max-width: 100%;
+    margin: 20px 10px 0;
+  }
+
+  .skill-section {
+    padding: 20px 10px;
   }
 
   .skill-list {
-    font-size: 24px;
+    font-size: 20px;
+    max-width: 100%;
+    padding-left: 10px;
+  }
+
+  .contact-section {
+    padding: 20px 10px;
   }
 
   .contact-form input,
   .contact-form textarea {
-    font-size: 16px;
+    font-size: 14px;
+    padding: 8px;
   }
 
   .contact-form button {
-    font-size: 18px;
+    font-size: 16px;
+    padding: 10px 20px;
   }
-}
 
+  .work-images .work-image,
+  .meishi-images .work-image {
+    width: 100%;
+    max-width: 100%;
+  }
 
-.site-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.logo {
-  font-size: 20px;
-}
-
-
-.hamburger,
-.nav-toggle {
-  display: none;
-}
-
-
-.site-nav ul {
-  display: flex;
-  gap: 30px;
-}
-
-
-@media (max-width: 480px) {
   .hamburger {
     display: block;
     font-size: 34px;
     cursor: pointer;
-    position: absolute;
+    position: static;
     top: 0px;
     right: 20px;
     z-index: 10;
   }
 
-
   .site-nav {
     display: none;
-    position: absolute;
+    position: static;
     top: 100%;
     left: 0;
     width: 100%;
@@ -664,15 +505,7 @@ html {
     padding: 20px 0;
   }
 
-  .site-nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 0 20px;
-  }
-
   .nav-toggle:checked + .hamburger + .site-nav {
     display: block;
   }
 }
-
