@@ -616,3 +616,63 @@ html {
     font-size: 18px;
   }
 }
+
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 40px;
+}
+
+
+.hamburger,
+.nav-toggle {
+  display: none;
+}
+
+
+.site-nav ul {
+  display: flex;
+  gap: 30px;
+}
+
+/* ----------------------------- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 38px;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    z-index: 10;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-top: 1px solid #ccc;
+    padding: 20px 0;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .nav-toggle:checked + .hamburger + .site-nav {
+    display: block;
+  }
+}
+
