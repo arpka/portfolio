@@ -59,30 +59,5 @@
     <p>© 2024 aikaarrow portfolio All rights reserved.</p>
   </footer>
 
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.01 });
-
-    document.querySelectorAll('.fade-in').forEach(el => {
-      observer.observe(el);
-    });
-
-    window.addEventListener('load', () => {
-      const images = document.querySelectorAll('.works img');
-      images.forEach(img => {
-        img.classList.add('loaded');
-        img.addEventListener('transitionend', () => {
-          img.classList.remove('loaded');
-        }, { once: true });
-      });
-    });
-  </script>
-
 </body>
 </html>
