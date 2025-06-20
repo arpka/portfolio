@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ぱぱっとおだし - Aika Fukuhara</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Yu Gothic', sans-serif;
+      background-color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      font-weight: bold;
+      color: #333;
+    }
+    .image-pc,
+    .image-sp {
+      max-width: 90vw;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+    .image-sp {
+      display: none;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 40px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover,
+    .back-link:focus {
+      text-decoration: underline;
+    }
+
+    /* スマホ画面サイズのときだけSP画像を表示 */
+    @media (max-width: 768px) {
+      .image-pc {
+        display: none;
+      }
+      .image-sp {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ぱぱっとおだし</h1>
+
+  <!-- PC用画像 -->
+  <img src="images/ppo-pc.png" alt="ぱぱっとおだし LP PC版" class="image-pc" />
+
+  <!-- スマホ用画像 -->
+  <img src="images/ppo-sp.png" alt="ぱぱっとおだし LP スマホ版" class="image-sp" />
+
+  <p>忙しい主婦の方向けに、安心・時短・栄養を意識してデザインした出汁商品のLPです。</p>
+
+  <a href="works.html" class="back-link">← Works一覧に戻る</a>
+
+</body>
+</html>
